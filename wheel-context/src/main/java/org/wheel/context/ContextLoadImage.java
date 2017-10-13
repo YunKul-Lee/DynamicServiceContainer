@@ -133,7 +133,7 @@ public class ContextLoadImage {
         }
     }
 
-    private synchronized boolean isContextClosed() {
+    public synchronized boolean isContextClosed() {
         return isSuccess() && this.applicationContext == null;
     }
 
