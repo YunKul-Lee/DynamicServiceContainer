@@ -15,7 +15,6 @@ import org.springframework.util.Assert;
 import org.springframework.util.SystemPropertyUtils;
 
 import java.io.File;
-import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
