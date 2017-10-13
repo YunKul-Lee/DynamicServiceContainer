@@ -59,6 +59,8 @@ public class ContextLoadImage {
                 failure,
                 loadAttributes
         );
+
+        return loadImage;
     }
 
     private ContextLoadImage(
