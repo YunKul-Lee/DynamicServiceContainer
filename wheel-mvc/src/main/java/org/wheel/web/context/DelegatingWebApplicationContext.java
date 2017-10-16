@@ -13,16 +13,16 @@ import org.wheel.context.MultiVersionContextContainer;
 import javax.servlet.ServletContext;
 import java.util.List;
 
-public class DelegationWebApplicationContext extends AbstractApplicationContext implements WebApplicationContext {
+public class DelegatingWebApplicationContext extends AbstractApplicationContext implements WebApplicationContext {
 
-    private static final Logger logger = LoggerFactory.getLogger(DelegationWebApplicationContext.class);
+    private static final Logger logger = LoggerFactory.getLogger(DelegatingWebApplicationContext.class);
 
     private final ServletContext servletContext;
     private final MultiVersionContextContainer mvcc;
 
     private final ConfigurableListableBeanFactory fallbackBeanFactory = new DefaultListableBeanFactory();
 
-    public DelegationWebApplicationContext(WebApplicationContext parent, ServletContext servletContext, MultiVersionContextContainer mvcc) {
+    public DelegatingWebApplicationContext(WebApplicationContext parent, ServletContext servletContext, MultiVersionContextContainer mvcc) {
         super(parent);
         this.servletContext = servletContext;
         this.mvcc = mvcc;
