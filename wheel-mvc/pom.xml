@@ -2,10 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
     <modelVersion>4.0.0</modelVersion>
+
     <groupId>org.wheel</groupId>
-    <artifactId>wheel-context</artifactId>
+    <artifactId>wheel-mvc</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <properties>
@@ -20,51 +20,34 @@
     </properties>
 
     <dependencies>
+
         <!-- ======================================================================= -->
-        <!-- Spring dependencies -->
+        <!-- Core dependencies -->
         <!-- ======================================================================= -->
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-            <version>${spring.version}</version>
+            <groupId>org.wheel</groupId>
+            <artifactId>wheel-context</artifactId>
+            <version>${project.version}</version>
         </dependency>
+
+        <!-- ======================================================================= -->
+        <!-- J2EE dependencies -->
+        <!-- ======================================================================= -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+        </dependency>
+
+        <!-- ======================================================================= -->
+        <!-- J2EE dependencies -->
+        <!-- ======================================================================= -->
 
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-beans</artifactId>
+            <artifactId>spring-webmvc</artifactId>
             <version>${spring.version}</version>
         </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
-
-        <!-- ======================================================================= -->
-        <!-- Logging dependencies -->
-        <!-- ======================================================================= -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.5</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>1.7.5</version>
-        </dependency>
-
-        <!-- ======================================================================= -->
-        <!-- JUnit dependencies -->
-        <!-- ======================================================================= -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-        </dependency>
-
     </dependencies>
 
     <build>
@@ -77,11 +60,11 @@
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <source>${compiler.source.version}</source>
                     <target>${compiler.target.version}</target>
-                    <renew>false</renew>
                     <skip>true</skip>
                 </configuration>
             </plugin>
         </plugins>
 
     </build>
+
 </project>
