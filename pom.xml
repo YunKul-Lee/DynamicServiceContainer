@@ -1,0 +1,39 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wheel</groupId>
+    <artifactId>DynamicServiceContainer</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <modules>
+        <module>wheel-context</module>
+        <module>wheel-mvc</module>
+    </modules>
+
+    <properties>
+        <jdk.version>1.6</jdk.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <compiler.source.version>1.6</compiler.source.version>
+        <compiler.target.version>1.6</compiler.target.version>
+        <compiler.plugin.version>2.3.2</compiler.plugin.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${compiler.plugin.version}</version>
+                <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <source>${compiler.source.version}</source>
+                    <target>${compiler.target.version}</target>
+                    <renew>false</renew>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+
+    </build>
+</project>
