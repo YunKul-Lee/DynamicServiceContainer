@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+                            http://www.springframework.org/schema/context
+                            http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+    <!-- Context Loader -->
+    <bean id="contextLoader" class="org.wheel.context.DefaultContextLoader">
+        <property name="configLocations">
+            <list>
+                <value>classpath*:wheel-config/applicationContext*.xml</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- Context Container -->
+    <bean id="multiVersionContextContainer" class="org.wheel.context.DefaultMultiVersionContextContainer">
+        <property name="loader" ref="contextLoader" />
+        <property name="srcJarDirectory"            value="/home/yklee/work/deploy-web" />
+        <property name="destJarBaseDirectory"       value="/home/yklee/work/deploy-web/wheel" />
+        <property name="enableAutoReload"           value="true" />
+        <property name="monitorIntervalSecs"        value="5" />
+        <property name="autoSwitchAfterReload"      value="true" />
+        <property name="autoSwitchSuccessOnly"      value="true" />
+        <property name="maxSuccessImagesInMemory"   value="2" />
+        <property name="maxFileCopyRetryCount"      value="10" />
+        <property name="fileCopyRetryIntervalMilis" value="2000" />
+    </bean>
+</beans>
