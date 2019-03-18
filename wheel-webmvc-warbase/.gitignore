@@ -1,0 +1,5 @@
+/target/
+/deploy-jar/
+/.classpath
+/.project
+/.settings/

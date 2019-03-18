@@ -156,16 +156,21 @@ public class WheelDispatcherServlet extends FrameworkServlet implements MultiVer
                 logger.debug("Started first-loading Wheel Application Context and waiting for finishing...");
             }
             imageFuture.get();
-        } catch(InterruptedException e) {
+        }
+        catch(InterruptedException e) {
             logger.error("Interrupted.", e);
-        } catch(ExecutionException e) {
+        }
+        catch(ExecutionException e) {
             logger.error("Loading failed.", e);
         }
 
         // START Wrapper
         try {
-            delegatingWac.refresh();
-        } catch(IllegalStateException e) {
+            //delegatingWac.refresh();
+        	//delegatingWac.refresh();
+            logger.info("wrapper started.");
+        }
+        catch(IllegalStateException e) {
             logger.warn("refresh() failed.", e);
         }
 
